@@ -1,3 +1,19 @@
+function getElementWidth(content, padding, border) {
+  // Функція для перетворення значення з формату Npx у число
+  const parseValue = value => parseFloat(value);
+
+  // Обчислюємо загальну ширину елемента
+  const totalWidth =
+    parseValue(content) + parseValue(padding) * 2 + parseValue(border) * 2;
+
+  return totalWidth; // Повертаємо загальну ширину
+}
+
+// Перевірка роботи функції
+console.log(getElementWidth('50px', '8px', '4px')); // 74
+console.log(getElementWidth('60px', '12px', '8.5px')); // 101
+console.log(getElementWidth('200px', '0px', '0px')); // 200
+
 /**
  * Арифметичні функції
  *
